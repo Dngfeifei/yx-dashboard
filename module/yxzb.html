@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/liMarquee.css">
+    <link rel="stylesheet" href="../css/yxzb.css">
+</head>
+
+<body>
+    <div class="containers">
+        <div class="row">
+            <div class="col-9">
+                <div class="left_top">
+                    <div class="topCount" id="whsb_num" style="height:50px;width: 234px; position: absolute;left: 42px; top: 42px;"></div>
+                    <div id="xxj" class="num" style="position: absolute;left: 380px; top: 53px;">12312</div>
+                    <div id="fwq" class="num" style="position: absolute;left: 592px; top: 53px;">12312</div>
+                    <div id="cc" class="num" style="position: absolute;left: 805px; top: 53px;">1223</div>
+                    <div id="wlsb" class="num" style="position: absolute;left: 1020px; top: 53px;">1123</div>
+                    <div id="rj" class="num" style="position: absolute;left: 1234px; top: 53px;">1123</div>
+                </div>
+                <ul class="left_center">
+                    <li>
+                        <div id="kh_bar" style="width: 100%; height: 100%;"></div>
+                        <span class="number" id="kh_number" style="left: 571px; top: 7px;">123123</span>
+                    </li>
+                    <li>
+                        <div id="xm_bar" style="width: 100%; height: 100%;"></div>
+                        <span class="number" id="xm_number" style="left: 571px; top: 7px;">123123</span>
+                    </li>
+                    <li>
+                        <div id="gd_bar" style="width: 100%; height: 100%;"></div>
+                        <span class="number" id="gd_number" style="left: 549px; top: 7px;">123123</span>
+                    </li>
+                    <li>
+                        <div id="gcs_bar" style="width: 100%; height: 100%;"></div>
+                        <span class="number" id="gcs_number" style="left: 571px; top: 7px;">123123</span>
+                    </li>
+                </ul>
+                
+                    <div class="divContent">
+                        <table class="table_bottom">
+                            <thead class="table_top">
+                                <th style="width: 202px;">工单编号</th>
+                                <th  style="width: 342px;">工单标题</th>
+                                <th  style="width: 215px;">当前代办人</th>
+                                <th  style="width: 146px;">工单类型</th>
+                                <th  style="width: 146px;">当前环节</th>
+                                <th  style="width: auto;">创建时间</th>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="divContent" id="table_content"></div>
+            </div>
+            <div class="col">
+                <div class="right_top">
+                    <div id="pie" class="pie"></div>
+                    <div id="total" class="num">2,323,232</div>
+                    <ul class="gd_list"></ul>
+                </div>
+                <div class="right_bottom">
+                    <ul class="list">
+                        <li><span>在途</span><br><span id="zt">1223</span></li>
+                        <li><span>存储</span><br><span id="kc">1223</span></li>
+                        <li><span>领用</span><br><span id="ly">1223</span></li>
+                        <li><span>整机</span><br><span id="zj">1223</span></li>
+                    </ul>
+                    <div class="bj_bar" id="bj_bar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 时间戳 -->
+        <div class="data-time">
+            <span id="datetime"></span>
+            <span id="hourminute"></span>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../jslib/jquery.min.js"></script>
+    <script src="../jslib/jquery.liMarquee.js"></script>
+    <script src="../js/module.js"></script>
+    <!-- echarts -->
+    <script src="../jslib/echarts.min.5.4.js"></script>
+    <script src="../jslib/echarts-gl.2.0.min.js"></script>
+    <script src="../jslib/chart-pie3d.js"></script>
+    <!-- 时间插件 -->
+    <script src="../jslib/moment.js"></script>
+    <!-- 界面缩放适配 -->
+    <script src="../jslib/bodyScale.js"></script>
+    <!-- 基础方法文件 -->
+    <script src="../jslib/methods.js"></script>
+    <!--  mq接口配置 -->
+    <script src="../js/config.js"></script>
+    <!-- 自定义js -->
+    <script src="../js/yxzb.config.js"></script>
+    <script src="../js/yxzb.js"></script>
+</body>
+
+</html>

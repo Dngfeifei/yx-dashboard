@@ -1,0 +1,11 @@
+{
+	"code": 200,
+	"msg": "请求成功",
+	"data": {
+		"customerNum": 912,
+		"projectNum": 3663,
+		"equipmentNum": 14698,
+		"ticketNum": 403,
+		"engineerNum": 1135
+	}
+}

@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'Myfont';
+    src: url("../font/aaaa.woff2") format("woff2"),
+      url("../font/aaaa.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+} 
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html,
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    /*background: rgba(215, 0, 15,.7);*/
+    transform-origin: 0 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Myfont';
+}
+
+
+.containers {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: url(../images/yxzb/yxzb-bg.png) no-repeat;
+    background-size: 100% 100%; 
+    position: relative;
+    background-color: black;
+}
+.containers>.row{
+    height: 100%;
+    padding-top: 74px;
+}
+.containers .row>div{
+    position: relative;
+    border: 0px red solid;
+}
+.containers .row>.col-9{
+    max-width: 72%;
+}
+.left_top{
+    height: 134px;
+    position: relative;
+    border: 0px red solid;
+}
+.left_top .num{
+    font-family: auto;
+    color: #fff17e;
+    font-size: 27px;
+}
+.left_center{
+    height: 603px;
+}
+.left_center > li{
+    width: 660px;
+    position: relative;
+    height: 276px;
+    border: 0px red solid;
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 25px;
+}
+.left_center > li > .number{
+    position: absolute;
+    color: #fff17e;
+    font-size: 24px;
+    font-family: auto;
+}
+/* 数字牌 */
+.topCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     font-size: 50px;
+     color: #fff17e;
+     line-height: 45px;
+     font-family: auto;
+     margin-top: 10px;
+   }
+   .topCount>span {
+     /* border: 1px solid #1a3292; */
+     height: 60px;
+     padding: 0 5px;
+     border-radius: 10%;
+     margin: 2px;
+     background-color: #2b416a;
+     line-height: 60px;
+   }
+
+   /* 工单明细表格样式 */
+.divContent {
+    padding: 0 9px 0 29px;
+}
+#table_content{
+    height: 190px;
+    line-height: normal;
+    overflow: hidden;
+}
+#table_content >.str_move {
+    width: auto;
+    left: 29px;
+    right: 9px;
+}
+.table_bottom {
+    width: 100%;
+    /* height: 225px; */
+    max-height: 190px;
+    
+    /* border: 0px red solid; */
+}
+.table_bottom tbody{
+    color: #99cccc;
+}
+.table_top{
+    height: 28px;
+    color: #cccccc;
+}
+   
+
+.table_bottom thead th,.table_bottom tbody td{
+    text-align: center;
+    font-size: 16px;
+    height: 34px;
+}
+.table_bottom tbody tr td{
+    height: 36px;
+    border-right: 1px #333366 solid;
+}
+.table_bottom tbody tr td.td1{
+    color: #6699cc;
+}
+.table_bottom  tr .td1{
+    width: 202px;
+}
+.table_bottom  tr .td2{
+    width: 342px;
+}
+.table_bottom  tr .td2>.title{
+    width: 342px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.table_bottom  tr .td3{
+    width: 215px;
+}
+.table_bottom  tr .td4{
+    width: 146px;
+}
+.table_bottom  tr .td5{
+    width: 146px;
+}
+.table_bottom tr .td6{
+    width: auto;
+}
+.table_bottom tbody tr:nth-child(odd) {
+    background-color:rgb(132 141 141 / 10%);
+}
+.table_bottom tbody tr:nth-child(even) {
+    /* background-color: rgba(51,51,51.5); */
+}
+ .divContent::-webkit-scrollbar,.divContent::-webkit-scrollbar {
+    width: 10px;
+    height: 0px
+  }
+  .divContent::-webkit-scrollbar-track,.divContent::-webkit-scrollbar-track {
+    border-radius: 2px;
+    height: 0px;
+  }
+  .divContent::-webkit-scrollbar-thumb,.divContent::-webkit-scrollbar-thumb {
+    background: #6699cc;
+    border-radius: 10px;
+    height: 0px;
+  }
+  .divContent::-webkit-scrollbar-thumb:hover,.divContent::-webkit-scrollbar-thumb:hover {
+    background: #6699cc;
+  } 
+
+ /* 工单明细表格样式 */
+
+  /* 右侧样式 */
+.right_top{
+    height: 396px;
+    position: relative;
+    /* border: 1px red solid; */
+}
+.right_top .pie{
+    width: 338px;
+    height: 245px;
+    position: absolute;
+    left: -10px;
+    top: 28px;
+    /* border: 1px red solid; */
+}
+.right_top>.num{
+    width: 230px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 28px;
+    color: #fff17e;
+    text-align: center;
+    position: absolute;
+    left: 46px;
+    top: 307px;
+    font-family: auto;
+}
+.right_top .dw{
+    font-size: 15px;
+    margin-left: 5px;
+}
+.gd_list{
+    width: 167px;
+    height: 325px;
+    position: absolute;
+    left: 320px;
+    top: 34px;
+}
+.gd_list li{
+    width: 167px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 10px; */
+    margin-top: 1px;
+    border: 0px red solid;
+}
+.gd_list li .dian{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: #fff;
+}
+.gd_list li span{
+    display: block;
+    height: 50%;
+    line-height: 112%;
+}
+.gd_list li .name{
+    width: 100px;
+    color: #ccccff;
+    font-size: 17px;
+}
+.gd_list li .num{
+    color: #ffff99;
+    font-size: 20px;
+    font-family: auto;
+}
+.right_bottom .list{
+    overflow: hidden;
+    margin-top: 55px;
+    margin-bottom: 0;
+}
+.right_bottom .list li{
+    width: 116px;
+    height: 58px;
+    float: left;
+    margin-left: 10px;
+    line-height: 113%;
+    padding-left: 11px;
+    padding-top: 3px;
+}
+.right_bottom .list li span:nth-child(1){
+    font-size: 18px;
+    color: #66ccff;
+}
+.right_bottom .list li span:nth-child(3){
+    font-size: 22px;
+    color: #fff17e;
+    font-family: auto;
+}
+
+.right_bottom .bj_bar{
+    width: 100%;
+    height: 470px;
+    border: 0px red solid;
+}
+
+
+
+.data-time {
+    position: absolute;
+    right: 9px;
+    color: #ccffff;
+    top: 10px;
+    letter-spacing: 4px;
+    font-family: math;
+}
+.data-time #datetime{
+    font-size: 16px;
+}
+.data-time #hourminute{
+    font-size: 24px;
+}

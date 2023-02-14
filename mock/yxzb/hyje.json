@@ -1,0 +1,13 @@
+{
+    "code":200,
+    "msg":"请求成功",
+    "data":{
+    "bank":111,
+    "government":222,
+    "manufacture":333,
+    "securities":444,
+    "telecom":555,
+    "other":666,
+    "total":2331
+    }
+}

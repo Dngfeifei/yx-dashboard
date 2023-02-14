@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="../css/bmap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="map" class="map"></div>
+        <div class="cortor"></div>
+        <ul class="btn">
+            <li class="active" data-bs="kh">客户</li>
+            <li data-bs="gcs">工程师</li>
+            <li data-bs="bj">备件库</li>
+        </ul>
+        <!-- 时间戳 -->
+        <div class="data-time">
+            <span id="datetime"></span>
+            <span id="hourminute"></span>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../jslib/jquery.min.js"></script>
+    <script src="../js/module.js"></script>
+    <!-- echarts -->
+    <script src="../jslib/echarts.min.5.4.js"></script>
+    <script src="../jslib/bmap.min.js"></script>
+    <script src="https://api.map.baidu.com/api?v=3.0&amp;ak=KvFzmH1an8HONqcrtSkLHeKNzmFQyvbP"></script>
+    <!-- 时间插件 -->
+    <script src="../jslib/moment.js"></script>
+    <!-- 界面缩放适配 -->
+    <script src="../jslib/bodyScale.js"></script>
+    <!-- 基础方法文件 -->
+    <script src="../jslib/methods.js"></script>
+    <!--  mq接口配置 -->
+    <script src="../js/config.js"></script>
+    <script src="../js/bmap.config.js"></script>
+    <!-- 自定义js -->
+    <script src="../js/bmap.js"></script>
+</body>
+
+</html>

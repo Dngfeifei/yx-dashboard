@@ -1,0 +1,33 @@
+{
+	"code": 200,
+	"msg": "请求成功",
+	"data": [{
+		"areas": "华北大区",
+		"skillTypeName": "X86服务器",
+		"num": 14654
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "小型机",
+		"num": 30
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "数据库",
+		"num": 2
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "磁带库",
+		"num": 1
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "磁盘阵列",
+		"num": 8
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "路由器交换机",
+		"num": 1
+	}, {
+		"areas": "华北大区",
+		"skillTypeName": "集群/容灾软件",
+		"num": 2
+	}]
+}
