@@ -1,12 +1,4 @@
 
-var rightIdData = []
-
-let sq_swiper, sz_swiper, sh_swiper, sq_timer = true, sz_timer = true, sh_timer = true, right_timer;
-//定义刷新二级页面方法
-var reestSq = function () { }, reestSz = function () { }, reestSh = function () { };
-var xdfkData = { xdfkCount: [], xdkfEchartsData: {} };
-var xgycData = {};
-var sjglData = {};
 
 /************************************ 客户柱图 *******************************/
 var kh_bar = echarts.init(document.getElementById('kh_bar'));
@@ -36,17 +28,17 @@ $(function () {
     setDateTime();
     setInterval(setDateTime, 1000);
     initMap();
-    setInterval(getData, 30000);
+    setInterval(getData, 60000);
 })
 var getData = function(){
   //行业金额统计
-  $.get(switcH == 1 ? '/mock/yxzb/hyje.json' : '/screen/center/selectIndustry', function (data) {
+  $.get(switcH == 1 ? '/mock/yxzb/hyje.json' : 'http://49.232.133.21:8089/screen/center/selectIndustry', function (data) {
     if(data.data){
       gdPie3(data.data)
     }
   })
   //备件数统计
-  $.get(switcH == 1 ? '/mock/yxzb/bjs.json' : '/screen/center/selectSparePartList', function (data) {
+  $.get(switcH == 1 ? '/mock/yxzb/bjs.json' : 'http://49.232.133.21:8089/screen/center/selectSparePartList', function (data) {
     if(data.data.length){
       var list = data.data,res1 = [],res2 = [],res3 = [],res4 = [],xAxisArr = [],zt = 0,kc =0,ly=0,zj=0;
       list.forEach(element => {
@@ -60,7 +52,7 @@ var getData = function(){
   })
 
   //中间四图
-  var barpz = [{url:'/mock/yxzb/bar.json',bs:'kh',url2:'/screen/biCustomer/selectBiCustomer'},{url:'/mock/yxzb/bar.json',bs:'xm',url2:'/screen/biProject/selectBiProject'},{url:'/mock/yxzb/bar.json',bs:'gd',url2:'/screen/biTicket/selectBiTicket'},{url:'/mock/yxzb/bar.json',bs:'gcs',url2:'/screen/biUser/selectBiUser'}];
+  var barpz = [{url:'/mock/yxzb/bar.json',bs:'kh',url2:'http://49.232.133.21:8089/screen/biCustomer/selectBiCustomer'},{url:'/mock/yxzb/bar.json',bs:'xm',url2:'http://49.232.133.21:8089/screen/biProject/selectBiProject'},{url:'/mock/yxzb/bar.json',bs:'gd',url2:'http://49.232.133.21:8089/screen/biTicket/selectBiTicket'},{url:'/mock/yxzb/bar.json',bs:'gcs',url2:'http://49.232.133.21:8089/screen/biUser/selectBiUser'}];
   for(let i = 0 ,len=barpz.length;i < len ; i++){
     $.get(switcH == 1 ? barpz[i].url : barpz[i].url2, function (data) {
       if(data.data.data){
@@ -78,13 +70,13 @@ var getData = function(){
  //中间四图
 
  //表格数据
- $.get(switcH == 1 ? '/mock/yxzb/table.json' : '/screen/biTicket/selectWorkOrder', function (data) {
+ $.get(switcH == 1 ? '/mock/yxzb/table.json' : 'http://49.232.133.21:8089/screen/biTicket/selectWorkOrder', function (data) {
   if(data.data.length || data.data.data.length){
     setTable(data.data.data || data.data);
   }
 })
 //中间四图四个数据统计指标
-var zbpz = [{url:'/mock/yxzb/zb.json',bs:'kh_number',url2:'/screen/biCustomer/selectBiCustomerNumber'},{url:'/mock/yxzb/zb.json',bs:'xm_number',url2:'/screen/biProject/selectBiProjectNumber'},{url:'/mock/yxzb/zb.json',bs:'gd_number',url2:'/screen/biTicket/selectBiTicketNumber'},{url:'/mock/yxzb/zb.json',bs:'gcs_number',url2:'/screen/biUser/selectBiUserNumber'}];
+var zbpz = [{url:'/mock/yxzb/zb.json',bs:'kh_number',url2:'http://49.232.133.21:8089/screen/biCustomer/selectBiCustomerNumber'},{url:'/mock/yxzb/zb.json',bs:'xm_number',url2:'http://49.232.133.21:8089/screen/biProject/selectBiProjectNumber'},{url:'/mock/yxzb/zb.json',bs:'gd_number',url2:'http://49.232.133.21:8089/screen/biTicket/selectBiTicketNumber'},{url:'/mock/yxzb/zb.json',bs:'gcs_number',url2:'http://49.232.133.21:8089/screen/biUser/selectBiUserNumber'}];
   for(let i = 0 ,len=zbpz.length;i < len ; i++){
     let bs = zbpz[i].bs;
     $.get(switcH == 1 ? zbpz[i].url : zbpz[i].url2, function (data) {
@@ -94,7 +86,7 @@ var zbpz = [{url:'/mock/yxzb/zb.json',bs:'kh_number',url2:'/screen/biCustomer/se
     })
   }
 //顶部指标
-$.get(switcH == 1 ? '/mock/yxzb/top.json' : '/screen/biConfigurations/selectBiConfigurations', function (data) {
+$.get(switcH == 1 ? '/mock/yxzb/top.json' : 'http://49.232.133.21:8089/screen/biConfigurations/selectBiConfigurations', function (data) {
   if(data.data.length){
     for(let i of data.data){
       switch (i.name) {

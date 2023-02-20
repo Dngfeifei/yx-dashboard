@@ -6,7 +6,7 @@ var option;
 var bs = 'kh',
 dataArr = {kh:[],gcs:[],bj:[]},
 urls = {kh:'/mock/dtrl/kh.json',gcs:'/mock/dtrl/gcs.json',bj:'/mock/dtrl/bj.json'},
-urlss = {kh:'/screen/hsotpot/selectCustomerAreaHostpot',gcs:'/screen/hsotpot/selectCustomerEngineerArea',bj:'/screen/center/selectSparePartWarehouseList'},
+urlss = {kh:'http://49.232.133.21:8089/screen/hsotpot/selectCustomerAreaHostpot',gcs:'http://49.232.133.21:8089/screen/hsotpot/selectCustomerEngineerArea',bj:'http://49.232.133.21:8089/screen/center/selectSparePartWarehouseList'},
 images = {kh:'image://../images/dtrl/03.png',gcs:'image://../images/dtrl/02-1.png',bj:'image://../images/dtrl/01.png'},
 imagesSize = {kh:[18,25],gcs:[7,17],bj:[32,43]};
 
@@ -22,7 +22,7 @@ $(function () {
       }
       $(this).addClass('active').siblings().removeClass('active');
     })
-    setInterval(getData, 30000);
+    setInterval(getData, 60000);
 })
 
 var getData = function(){
@@ -40,11 +40,11 @@ var getData = function(){
 function toMassage(data) {
   var res = [];
   for (var i = 0; i < data.length; i++) {
-    var geoCoord = geoCoordMap[data[i].areas];
+    var geoCoord = geoCoordMap[(data[i].areas || data[i].engineerAreas || data[i].city)];
     if (geoCoord) {
       res.push({
-        name: data[i].areas || data[i].engineerNum,
-        value: geoCoord.concat(data[i].customerNum || data[i].engineerAreas),
+        name: data[i].areas || data[i].engineerAreas || data[i].city,
+        value: geoCoord.concat(data[i].customerNum || data[i].engineerNum|| data[i].amount),
         symbol: images[bs],
         symbolSize: imagesSize[bs],
       });

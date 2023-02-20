@@ -2,117 +2,7 @@
 var arrPie = {
     gcs_bar:[
         {
-            data: [{
-                value:1643,
-                itemStyle:{
-                    color: {
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        type: 'linear',
-                        global: false,
-                        colorStops: [
-                          {
-                            offset: 0,
-                            color: '#3399cc'
-                          },
-                          {
-                            offset: 1,
-                            color: '#33cc99'
-                          }
-                        ]
-                      }
-                }
-            }, {
-                value:6980,
-                itemStyle:{
-                    color: {
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        type: 'linear',
-                        global: false,
-                        colorStops: [
-                          {
-                            offset: 0,
-                            color: '#3399cc'
-                          },
-                          {
-                            offset: 1,
-                            color: '#33cc99'
-                          }
-                        ]
-                      }
-                }
-            }, {
-                value:869,
-                itemStyle:{
-                    color: {
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        type: 'linear',
-                        global: false,
-                        colorStops: [
-                          {
-                            offset: 0,
-                            color: '#3399cc'
-                          },
-                          {
-                            offset: 1,
-                            color: '#33cc99'
-                          }
-                        ]
-                      }
-                }
-            }, {
-                value:2151,
-                itemStyle:{
-                    color: {
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        type: 'linear',
-                        global: false,
-                        colorStops: [
-                          {
-                            offset: 0,
-                            color: '#3399cc'
-                          },
-                          {
-                            offset: 1,
-                            color: '#33cc99'
-                          }
-                        ]
-                      }
-                }
-            }, {
-                value:12,
-                itemStyle:{
-                    color: {
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        type: 'linear',
-                        global: false,
-                        colorStops: [
-                          {
-                            offset: 0,
-                            color: '#3399cc'
-                          },
-                          {
-                            offset: 1,
-                            color: '#33cc99'
-                          }
-                        ]
-                      }
-                }
-            }],
+            data: [],
             type: 'bar',
             name:'',
             barMaxWidth: 'auto',
@@ -146,7 +36,7 @@ var arrPie = {
             }
           },
           {
-            data: [{value:1643,itemStyle:{color:'#33cccc'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#33cccc'}}, {value:2151,itemStyle:{color:'#33cccc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+            data: [],
             type: 'pictorialBar',
             barMaxWidth: '20',
             itemStyle: {
@@ -157,7 +47,7 @@ var arrPie = {
             symbolSize: [30, 15]
           },
           {
-            data: [{value:1643,itemStyle:{color:'#33cccc'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#33cccc'}}, {value:2151,itemStyle:{color:'#33cccc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+            data: [],
             type: 'pictorialBar',
             barMaxWidth: '20',
             itemStyle: {
@@ -170,7 +60,7 @@ var arrPie = {
             zlevel: 2
           },
           {
-            data: [{value:1643,itemStyle:{color:'#33cccc'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#33cccc'}}, {value:2151,itemStyle:{color:'#33cccc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+            data: [],
             type: 'pictorialBar',
             barMaxWidth: '20',
             itemStyle: {
@@ -200,7 +90,7 @@ var arrPie = {
                 fontSize: 16,
             },
             symbolPosition: 'end',
-            data: [24,5,8,41,169],
+            data: [],
         },
         {
 		    name: '客户',
@@ -257,10 +147,7 @@ var arrPie = {
                       }
 				}
 			},
-		    data: [24,5,8,41,169],
-		    // animationDuration: function (idx) {
-		    //     return idx * 1500 + 1000;
-		    // }
+		    data: [],
 		},
     ],
     xm_bar:[
@@ -287,7 +174,7 @@ var arrPie = {
                 ]),
               },
             },
-            data: [47, 46, 41, 46, 44],
+            data: [],
             z: 10,
             zlevel: 0,
           },
@@ -306,7 +193,7 @@ var arrPie = {
             symbolSize: [22, 5],
             symbolPosition: 'start',
             symbolOffset: [1, 1],
-            data: [47, 46, 41, 46, 44],
+            data: [],
             width: 2,
             z: 0,
             zlevel: 1,
@@ -349,12 +236,12 @@ var arrPie = {
                 fontSize: 16,
             },
             symbolPosition: 'end',
-            data: [47, 46, 41, 46, 44],
+            data: [],
         },
         {
             type: 'bar',
             barWidth: 10,
-            data: [47, 46, 41, 46, 44],
+            data: [],
             itemStyle: {
                normal: {
                 //   barBorderRadius: [0, 20, 20, 0],
@@ -439,7 +326,6 @@ function getBar(obj) {
       axisLabel: {
         color: '#fff',
         fontSize: 15,
-        interval: 0,
         padding: [10, 0, 0, 0],
       },
       axisTick: {
@@ -460,7 +346,7 @@ function getBar(obj) {
         },
         show: false
       },
-      data: ['小型机大区','服务器','存储','网络设备','软件'],
+      data: [],
       type: 'category'
     },
     yAxis: {
@@ -545,7 +431,6 @@ function getBar2(obj) {
       color: '#99ccff',
       fontFamily: 'Myfont',
       fontSize: 15,
-      interval: 0,
       padding: [10, 0, 0, 0],
     },
     axisTick: {
@@ -566,7 +451,7 @@ function getBar2(obj) {
       },
       show: false
     },
-    data: ['华东大区','华北大区','华南大区','新疆大区','西北大区','西南大区'],
+    data: [],
     type: 'category'
   },
   xAxis: {
@@ -616,7 +501,7 @@ function getBar2(obj) {
           color: '#cc6666'
         }
       },
-      "data": [98, 64, 68, 136, 96, 156],
+      "data": [],
     },
     {
       name: '库存',
@@ -637,7 +522,7 @@ function getBar2(obj) {
           ])
         }
       },
-      "data": [98, 64, 68, 136, 96, 156],
+      "data": [],
     },
     {
       name: '领用',
@@ -657,7 +542,7 @@ function getBar2(obj) {
           ])
         }
       },
-      "data": [98, 64, 68, 136, 96, 156],
+      "data": [],
     },
     {
       name: '整机',
@@ -669,7 +554,7 @@ function getBar2(obj) {
           color: '#33ff99'
         }
       },
-      "data": [98, 64, 68, 136, 96, 156],
+      "data": [],
     }
   ],
   tooltip: {
@@ -716,7 +601,6 @@ function getLine(){
       axisLabel: {
         color: '#fff',
         fontSize: 15,
-        interval: 0,
         padding: [10, 0, 0, 0],
       },
       axisTick: {
@@ -737,7 +621,7 @@ function getLine(){
         },
         show: false
       },
-      data: ['2022-06','2023-06','2024-06','2025-06','2026-06','2027-06','2028-06'],
+      data: [],
     },
     yAxis: {
       nameTextStyle: {
@@ -857,7 +741,7 @@ function getLine(){
                 borderWidth: 3,
             },
 
-            data: [20, 13, 17, 23, 12],
+            data: [],
         },
         {
             name: '服务请求单数',
@@ -903,7 +787,7 @@ function getLine(){
                 borderWidth: 3,
             },
 
-            data: [8, 14, 18, 11, 12],
+            data: [],
         }
     ]};
     gd_line.setOption(option);

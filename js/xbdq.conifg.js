@@ -124,7 +124,7 @@ function getBar() {
       containLabel: true,
       left: '3%',
       right: '5%',
-      bottom: '2%',
+      bottom: '3%',
       top: '10%'
     },
     xAxis: {
@@ -136,8 +136,7 @@ function getBar() {
       axisLabel: {
         color: '#fff',
         fontSize: 12,
-        interval: 0,
-        rotate:25,
+        // rotate:8,
         padding: [10, 0, 0, 0],
       },
       axisTick: {
@@ -158,7 +157,7 @@ function getBar() {
         },
         show: false
       },
-      data: ['小型机','服务器','存储','网络设备','软件',],
+      data: [],
       type: 'category'
     },
     yAxis: {
@@ -200,7 +199,7 @@ function getBar() {
     series: [
       {
         data: [{
-            value:1643,
+            value:0,
             itemStyle:{
                 color: {
                     x: 0,
@@ -222,7 +221,7 @@ function getBar() {
                   }
             }
         }, {
-            value:6980,
+            value:0,
             itemStyle:{
                 color: {
                     x: 0,
@@ -244,7 +243,7 @@ function getBar() {
                   }
             }
         }, {
-            value:869,
+            value:0,
             itemStyle:{
                 color: {
                     x: 0,
@@ -266,7 +265,7 @@ function getBar() {
                   }
             }
         }, {
-            value:2151,
+            value:0,
             itemStyle:{
                 color: {
                     x: 0,
@@ -288,7 +287,7 @@ function getBar() {
                   }
             }
         }, {
-            value:12,
+            value:0,
             itemStyle:{
                 color: {
                     x: 0,
@@ -343,7 +342,7 @@ function getBar() {
         }
       },
       {
-        data: [{value:1643,itemStyle:{color:'#66cc99'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#ffff99'}}, {value:2151,itemStyle:{color:'#3399cc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+        data: [{value:0,itemStyle:{color:'#66cc99'}}, {value:0,itemStyle:{color:'#33cccc'}}, {value:0,itemStyle:{color:'#ffff99'}}, {value:0,itemStyle:{color:'#3399cc'}}, {value:0,itemStyle:{color:'#33cccc'}}],
         type: 'pictorialBar',
         barMaxWidth: '20',
         symbol: 'diamond',
@@ -351,7 +350,7 @@ function getBar() {
         symbolSize: [30, 15]
       },
       {
-        data: [{value:1643,itemStyle:{color:'#66cc99'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#ffff99'}}, {value:2151,itemStyle:{color:'#3399cc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+        data: [{value:0,itemStyle:{color:'#66cc99'}}, {value:0,itemStyle:{color:'#33cccc'}}, {value:0,itemStyle:{color:'#ffff99'}}, {value:0,itemStyle:{color:'#3399cc'}}, {value:0,itemStyle:{color:'#33cccc'}}],
         type: 'pictorialBar',
         barMaxWidth: '20',
         symbolPosition: 'end',
@@ -361,7 +360,7 @@ function getBar() {
         zlevel: 2
       },
       {
-        data: [{value:1643,itemStyle:{color:'#66cc99'}}, {value:6980,itemStyle:{color:'#33cccc'}}, {value:869,itemStyle:{color:'#ffff99'}}, {value:2151,itemStyle:{color:'#3399cc'}}, {value:12,itemStyle:{color:'#33cccc'}}],
+        data: [{value:0,itemStyle:{color:'#66cc99'}}, {value:0,itemStyle:{color:'#33cccc'}}, {value:0,itemStyle:{color:'#ffff99'}}, {value:0,itemStyle:{color:'#3399cc'}}, {value:0,itemStyle:{color:'#33cccc'}}],
         type: 'pictorialBar',
         barMaxWidth: '20',
         symbol: 'diamond',
@@ -411,7 +410,6 @@ function getLine(){
       axisLabel: {
         color: '#fff',
         fontSize: 15,
-        interval: 0,
         padding: [10, 0, 0, 0],
       },
       axisTick: {
@@ -432,7 +430,7 @@ function getLine(){
         },
         show: false
       },
-      data: ['2022-06','2023-06','2024-06','2025-06','2026-06','2027-06','2028-06'],
+      data: [0],
     },
     yAxis: {
       nameTextStyle: {
@@ -507,7 +505,7 @@ function getLine(){
             tooltip: {
                 formatter: '{a}人',
             },
-            data: [28, 27, 35, 34, 24],
+            data: [0],
         },
         {
             name: '事件单数量',
@@ -552,7 +550,7 @@ function getLine(){
                 borderWidth: 3,
             },
 
-            data: [20, 13, 17, 23, 12],
+            data: [0],
         },
         {
             name: '服务请求单数',
@@ -598,7 +596,7 @@ function getLine(){
                 borderWidth: 3,
             },
 
-            data: [8, 14, 18, 11, 12],
+            data: [0],
         },
         {
           name: '巡检单数量',
@@ -644,7 +642,7 @@ function getLine(){
               borderWidth: 3,
           },
 
-          data: [8, 14, 18, 11, 12],
+          data: [0],
       }
     ]};
     gd_line.setOption(option);
@@ -839,6 +837,9 @@ function getPie () {
     series: [{
         type: 'pie',
         startAngle:90,
+        emphasis: {
+          show:false
+        },
         center: ['25%', '60%'],
         radius: ["48%", "55%"],
         itemStyle: {
@@ -856,14 +857,18 @@ function getPie () {
               }],
               global: false
               }
-          }
+          },
+          emphasis: {
+            show:false
+          },
       },
       label: { // 设置图形标签样式
         show: true, // 未高亮时不显示标签，否则高亮时显示的标签会与静态的标签重叠
         position: 'center',
         // 设置标签展示内容,其中{d}、{b}为echarts标签内容格式器
         formatter: function(value,a,b){
-          return '{a|' + value.percent + '}{b|/' + totalAreaEngineer + '}\n{c|区域工程师}';
+          console.log(value)
+          return '{a|' + value.value + '}{b|/' + totalAreaEngineer + '}\n{c|区域工程师}';
         },
         // 为标签内容指定样式，只能设置series-pie.label支持的样式
         rich: {
@@ -886,7 +891,7 @@ function getPie () {
           show: false
         },
         data: [{
-            value: 70,
+            value: 0,
             itemStyle: {
               normal: {
                   color: {
@@ -907,7 +912,12 @@ function getPie () {
           }
         },
         {
-          value: 30,
+          value: 100,
+          label:{
+            normal: {
+              show: false,
+            }
+          },
           itemStyle: {
             normal: {
                 color: 'rgba(204,204,204,.3)'
@@ -945,7 +955,7 @@ function getPie () {
         position: 'center',
         // 设置标签展示内容,其中{d}、{b}为echarts标签内容格式器
         formatter: function(value,a,b){
-          return '{a|' + value.percent + '}{b|/' + totalEngineerd + '}\n{c|全国工程师}';
+          return '{a|' + value.value + '}{b|/' + totalEngineerd + '}\n{c|全国工程师}';
         },
         // 为标签内容指定样式，只能设置series-pie.label支持的样式
         rich: {
@@ -965,7 +975,7 @@ function getPie () {
         }
       },
       data: [{
-          value: 70,
+          value: 0,
           itemStyle: {
             normal: {
                 color: {
@@ -986,7 +996,12 @@ function getPie () {
         }
       },
       {
-        value: 30,
+        value: 100,
+        label:{
+          normal: {
+            show: false,
+          }
+        },
         itemStyle: {
           normal: {
               color: 'rgba(204,204,204,.3)'

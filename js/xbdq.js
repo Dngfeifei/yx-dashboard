@@ -30,25 +30,26 @@ $(function () {
         }
         $('.title').html(`${bs}数据统计`);
         // $('body').css({'background':`url(../images/xbdq/${$(this).data('bs')}.png) no-repeat`});
-        $('body').removeClass().addClass($(this).data('bs'));
+        $('#containers').removeClass().addClass($(this).data('bs'));
         $(this).addClass('active').siblings().removeClass('active');
     })
-    setInterval(getData, 30000);
+    setInterval(getData, 60000);
 })
 
 var getData = function(){
     //指标
-  $.get((switcH == 1 ? '/mock/xbdq/zb.json' : '/screen/area/selectAreaData') +'?area=' + bs, function (data) {
+  $.get((switcH == 1 ? '/mock/xbdq/zb.json' : 'http://49.232.133.21:8089/screen/area/selectAreaData') +'?area=' + bs, function (data) {
     if(data.data){
-      $('#kh').html(data.data.customerNum);
-      $('#xm').html(data.data.projectNum);
-      $('#sb').html(data.data.equipmentNum);
-      $('#gd').html(data.data.ticketNum);
-      $('#gcs').html(data.data.engineerNum);
+      $('#kh').html(data.data.customerNum || 0);
+      $('#xm').html(data.data.projectNum || 0);
+      $('#sb').html(data.data.equipmentNum || 0);
+      $('#gd').html(data.data.ticketNum || 0);
+      $('#gcs').html(data.data.engineerNum || 0);
+      $('#bj').html(data.data.sparePartNum || 0);
     }
   })
 //设备数量
-  $.get((switcH == 1 ? '/mock/xbdq/sbsl.json': '/screen/area/type') +'?area=' + bs, function (data) {
+  $.get((switcH == 1 ? '/mock/xbdq/sbsl.json': 'http://49.232.133.21:8089/screen/area/type') +'?area=' + bs, function (data) {
     if(data.data){
         var res = [],res2 = [],dataLIst = data.data,n = 0,nameArr = [];
         for (var i = 0; i < dataLIst.length; i++) {
@@ -71,26 +72,26 @@ var getData = function(){
     }
   })
   //工程师忙碌比
-  $.get((switcH == 1 ? '/mock/xbdq/mlb.json': '/screen/area/engineer') +'?area=' + bs, function (data) {
+  $.get((switcH == 1 ? '/mock/xbdq/mlb.json': 'http://49.232.133.21:8089/screen/area/engineer') +'?area=' + bs, function (data) {
     if(data.data){
       totalAreaEngineer = data.data.totalAreaEngineer,totalEngineerd = data.data.totalEngineer; //区域工程师人数，全国工程师人数
-      gcsoption.series[0].data[0].value = data.data.busyAreaEngineer, gcsoption.series[0].data[1].value = (100 - data.data.busyAreaEngineer);
-      gcsoption.series[1].data[0].value = data.data.busyEngineer, gcsoption.series[1].data[1].value = (100 - data.data.busyEngineer);
+      gcsoption.series[0].data[0].value = data.data.busyAreaEngineer, gcsoption.series[0].data[1].value = (totalAreaEngineer - data.data.busyAreaEngineer);
+      gcsoption.series[1].data[0].value = data.data.busyEngineer, gcsoption.series[1].data[1].value = (totalEngineerd - data.data.busyEngineer);
       gcs_pie.setOption(gcsoption);
     }
   })
 //工单分布
-  $.get((switcH == 1 ?'/mock/xbdq/gd.json' : '/screen/area/order') +'?area=' + bs, function (data) {
+  $.get((switcH == 1 ?'/mock/xbdq/gd.json' : 'http://49.232.133.21:8089/screen/area/order') +'?area=' + bs, function (data) {
     if(data.data){
       gdPie3(data.data);
     }
   })
 
   var linepz = [
-    {url:'/mock/xbdq/gdqs.json',index:0,url2:'/screen/area/selectWorkOrderTotal'},
-    {url:'/mock/xbdq/gdqs.json',index:1,url2:'/screen/area/selectWorkOrderEvent'},
-    {url:'/mock/xbdq/gdqs.json',index:2,url2:'/screen/area/selectWorkOrderService'},
-    {url:'/mock/xbdq/gdqs.json',index:3,url2:'/screen/area/selectWorkOrderInspection'}
+    {url:'/mock/xbdq/gdqs.json',index:0,url2:'http://49.232.133.21:8089/screen/area/selectWorkOrderTotal'},
+    {url:'/mock/xbdq/gdqs.json',index:1,url2:'http://49.232.133.21:8089/screen/area/selectWorkOrderEvent'},
+    {url:'/mock/xbdq/gdqs.json',index:2,url2:'http://49.232.133.21:8089/screen/area/selectWorkOrderService'},
+    {url:'/mock/xbdq/gdqs.json',index:3,url2:'http://49.232.133.21:8089/screen/area/selectWorkOrderInspection'}
   ];
   for(let i = 0 ,len=linepz.length;i < len ; i++){
     let index = linepz[i].index;
