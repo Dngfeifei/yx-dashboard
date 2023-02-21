@@ -24,18 +24,22 @@ $(function () {
     initMap();
     //添加大区切换事件
     $('.region_btn li').click( function(){
-        if(bs !== $(this).html()) {
-          bs = $(this).html();
-          getData();
-        }
-        $('.title').html(`${bs}数据统计`);
-        // $('body').css({'background':`url(../images/xbdq/${$(this).data('bs')}.png) no-repeat`});
-        $('#containers').removeClass().addClass($(this).data('bs'));
-        $(this).addClass('active').siblings().removeClass('active');
+      var index = $(this).index()
+      clickFn(index);
     })
     setInterval(getData, 60000);
 })
-
+var clickFn = function(index){
+  _this = $('.region_btn li').eq(index);
+  if(bs !== _this.html()) {
+    bs = _this.html();
+    getData();
+  }
+  $('.title').html(`${bs}数据统计`);
+  // $('body').css({'background':`url(../images/xbdq/${$(this).data('bs')}.png) no-repeat`});
+  $('#containers').removeClass().addClass(_this.data('bs'));
+  _this.addClass('active').siblings().removeClass('active');
+}
 var getData = function(){
     //指标
   $.get((switcH == 1 ? '/mock/xbdq/zb.json' : 'http://49.232.133.21:8089/screen/area/selectAreaData') +'?area=' + bs, function (data) {
@@ -67,7 +71,7 @@ var getData = function(){
           }
         }
         sboption.xAxis.data = nameArr,sboption.series[0].data = res,sboption.series[1].data = sboption.series[2].data = sboption.series[3].data = res2;
-        console.log(sboption)
+        // console.log(sboption)
         sb_bar.setOption(sboption);
     }
   })
@@ -182,41 +186,14 @@ function gdPie3(data) {
 var initMap = function (parmArr) {
     gdPie3({});
     getData();
+    // setTimeout(setLunbo, 5000);
 }
-var setDom = function (dataArr) {
-    dataArr.forEach(function (val, index) {
-        var _html = '';
-        if (val.type == 1) {
-            val.data.forEach(function (value, index) {
-                let url1 = value.url
-                _html += `<li class=${url1 ? 'eventLi' : ''} data-bs=${value.id} title=${value.name} data-url="./2/${value.url}.html"><span>${value.name}</span></li>`
-            })
-            $(`#${val.bs}_list`).html(_html)
-        } else {
-            val.data.forEach(function (value, index) {
-
-                if (index !== 0) {
-                    // console.log(index == val.data.length, index, val.data.length - 1)
-                    if ((index + 1) % 6 == 0 && index !== val.data.length - 1) {
-                        _html += `<li  title=${value.name}><span style="text-align:left !important;">${value.name}</span></li></ul></div><div class="swiper-slide"><ul class="clear">`
-                    } else if (value.name == "非信贷资产风险分类系统") {
-                        _html += `<li class="leftLi"  title=${value.name}><span style="text-align:left !important;">${value.name}</span></li>`
-                    } else if (value.name == "责任认定与追究信息管理系统") {
-                        _html += `<li class="leftLi1"  title=${value.name}><span style="text-align:left !important;">${value.name}</span></li>`
-                    } else {
-                        _html += `<li  title=${value.name}><span style="text-align:left !important;">${value.name}</span></li>`
-                    }
-
-                } else if (index == val.data.length - 1) {
-                    _html += `</ul></div>`;
-                } else {
-                    _html += `<div class="swiper-slide"><ul class="clear"><li title=${value.name}><span>${value.name}</span></li>`
-                }
-            })
-            // console.log(_html)
-            $(`#${val.bs}_qiehuan`).html(_html + `</ul></div>`)
-        }
-    })
+var setLunbo = function () {
+    var oDom = $('.region_btn li'),index = $('.region_btn .active').index();
+    index = index + 1 >= oDom.length ? 0 : index + 1;
+    console.log(index);
+    // clickFn(index);
+    setTimeout(setLunbo, 5000);
 }
 
 // 时间戳函数

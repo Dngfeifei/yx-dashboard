@@ -867,7 +867,7 @@ function getPie () {
         position: 'center',
         // 设置标签展示内容,其中{d}、{b}为echarts标签内容格式器
         formatter: function(value,a,b){
-          console.log(value)
+          // console.log(value)
           return '{a|' + value.value + '}{b|/' + totalAreaEngineer + '}\n{c|区域工程师}';
         },
         // 为标签内容指定样式，只能设置series-pie.label支持的样式
